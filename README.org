@@ -1,0 +1,99 @@
+#+title: Land Microservices Archetype
+#+subtitle: README
+#+author: vanniuner
+#+HTML_HEAD: <script src  = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+#+HTML_HEAD: <script src  = "https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/scroll.js"></script>
+#+HTML_HEAD: <link   href = "https://emacs-1308440781.cos.ap-chengdu.myqcloud.com/org_css.css" rel="stylesheet" type="text/css"></link>
+#+OPTIONS: prop:nil timestamp:t \n:t ^:nil f:t toc:t author:t num:t H:2
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: elegantpaper
+#+latex:\newpage
+
+* context
+  #+BEGIN_SRC dot :file project-depency.svg
+    digraph G {
+        bgcolor="transparent"
+        rankdir = TD
+        node [shape="box",fontcolor="#c475db" color=black]
+        edge [color="#a69fe0" fontcolor=white]
+
+        subgraph clusterA {
+            rankdir = TD
+            color = "#EFC050"
+            fontcolor = "#EFC050"
+            label = "land-archetype";
+            node [shape="box",fontcolor="#c475db" color=black]
+            edge [color="#a69fe0" fontcolor=white]
+            service [label="service"]
+            landArchetypePom [label="land-archetype-pom"]
+
+            landArchetypePom -> service [dir=back minlen=1,label="depency"]
+            service -> biz [dir=back minlen=1,label="depency"]
+            biz -> dao [dir=back minlen=1,label="depency"]
+            dao -> api [dir=back minlen=2,label="depency"]
+            {rank=same biz,service}
+            {rank=same dao,api}
+        }
+
+        subgraph clusterP {
+            rankdir = TD
+            color = "#EFC050"
+            fontcolor = "#EFC050"
+            label = "land-parent";
+            springboot [label="org.springframework.boot\lspring-boot-starter-parent\l2.7.9\l"]
+            landParentPom [label="land-parent-pom"]
+            springboot -> landParentPom [dir=back]
+            landParentPom -> landArchetypePom [dir=back label="extend"]
+            {rank=same api,landParentPom}
+        }
+
+        subgraph clusterC {
+            rankdir = TD
+            color = "#EFC050"
+            fontcolor = "#EFC050"
+            label = "land-component";
+            landComponentPom [label="land-component-pom"]
+            landParentPom -> landComponentPom [dir=back label="extend"]
+        }
+
+
+        subgraph clusterC1 {
+            rankdir = TD
+            color = "#EFC050"
+            fontcolor = "#EFC050"
+            label = "land-component-1";
+            landComponent1 [label="land-component-1.jar"]
+            landComponentPom -> landComponent1 [dir=back label="extend" minlen=2]
+        }
+
+        subgraph clusterC2 {
+            rankdir = TD
+            color = "#EFC050"
+            fontcolor = "#EFC050"
+            label = "land-component-2";
+            landComponent2 [label="land-component-2.jar"]
+            landComponentPom -> landComponent2 [dir=back label="extend" ]
+        }
+
+    }
+  #+END_SRC
+
+  #+CAPTION: 模块依赖关系
+  #+RESULTS:
+  [[file:project-depency.svg]]
+
+* build
+#+begin_src
+sh ./land.template/build-archetype.sh
+#+end_src
+
+* generate
+#+begin_src shell
+mvn archetype:generate -DarchetypeGroupId=com.land.archetype \
+-DarchetypeArtifactId=pom-archetype -DarchetypeVersion=0.0.1-SNAPSHOT \
+-DinteractiveMode=false -DgroupId=com.land.center -DartifactId=land.crm \
+-Dversion=0.1.0-SNAPSHOT -Dpackage=com.land.crm \
+#+end_src
+
+* referene
+https://www.baeldung.com/maven-relativepath
