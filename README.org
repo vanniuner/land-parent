@@ -9,6 +9,8 @@
 #+LATEX_CLASS: elegantpaper
 #+latex:\newpage
 
+* Introduction
+Land Microservices Archetype , A standard Java framework for quick projects for teams and companies.
 * context
   #+BEGIN_SRC dot :file project-depency.svg
     digraph G {
@@ -95,5 +97,14 @@ mvn archetype:generate -DarchetypeGroupId=com.land.archetype \
 -Dversion=0.1.0-SNAPSHOT -Dpackage=com.land.crm \
 #+end_src
 
+* git submodule
+#+begin_src shell
+# 添加一个子模块项目
+git submodule add git@github.com:vanniuner/land-archetype.git
+# 克隆项目并自动刷拉取所有子模块
+git clone --recurse-submodules git@github.com:vanniuner/land-parent.git
+# 更新 所有 子模块
+git submodule update --remote
+#+end_src
 * referene
 https://www.baeldung.com/maven-relativepath
