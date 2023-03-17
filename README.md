@@ -1,28 +1,28 @@
 
 # Table of Contents
 
-1.  [context](#org2df5ab2)
-2.  [build](#orgd2be5b6)
-3.  [generate](#org90e7593)
-4.  [referene](#org4ae4afa)
+1.  [context](#org98c8912)
+2.  [build](#org1eab2b1)
+3.  [generate](#orged8f65b)
+4.  [referene](#orgc97e129)
 
 
 
-<a id="org2df5ab2"></a>
+<a id="org98c8912"></a>
 
 # context
 
 ![img](project-depency.svg "模块依赖关系")  
 
 
-<a id="orgd2be5b6"></a>
+<a id="org1eab2b1"></a>
 
 # build
 
     sh ./land.template/build-archetype.sh
 
 
-<a id="org90e7593"></a>
+<a id="orged8f65b"></a>
 
 # generate
 
@@ -32,7 +32,7 @@
     -Dversion=0.1.0-SNAPSHOT -Dpackage=com.land.crm \
 
 
-<a id="org4ae4afa"></a>
+<a id="orgc97e129"></a>
 
 # referene
 
