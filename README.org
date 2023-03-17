@@ -15,7 +15,7 @@
         bgcolor="transparent"
         rankdir = TD
         node [shape="box",fontcolor="#c475db" color=black]
-        edge [color="#a69fe0" fontcolor=white]
+        edge [color="#a69fe0" fontcolor=black]
 
         subgraph clusterA {
             rankdir = TD
@@ -23,7 +23,7 @@
             fontcolor = "#EFC050"
             label = "land-archetype";
             node [shape="box",fontcolor="#c475db" color=black]
-            edge [color="#a69fe0" fontcolor=white]
+            edge [color="#a69fe0" fontcolor=black]
             service [label="service"]
             landArchetypePom [label="land-archetype-pom"]
 
