@@ -1,37 +1,37 @@
 
 # Table of Contents
 
-1.  [Introduction](#org16384f7)
-2.  [context](#org5aadedd)
-3.  [build](#org63d887e)
-4.  [generate](#orgd229d49)
-5.  [git submodule](#orgc38acc9)
-6.  [referene](#org805dc73)
+1.  [Introduction](#org8e31d01)
+2.  [context](#orgb976fa3)
+3.  [build](#orga4882ec)
+4.  [generate](#orgac9ebb2)
+5.  [git submodule](#orga4ccc46)
+6.  [referene](#orgff7e405)
 
 
 
-<a id="org16384f7"></a>
+<a id="org8e31d01"></a>
 
 # Introduction
 
 Land Microservices Archetype , A standard Java framework for quick projects for teams and companies.  
 
 
-<a id="org5aadedd"></a>
+<a id="orgb976fa3"></a>
 
 # context
 
 ![img](project-depency.svg "模块依赖关系")  
 
 
-<a id="org63d887e"></a>
+<a id="orga4882ec"></a>
 
 # build
 
     sh ./land.template/build-archetype.sh
 
 
-<a id="orgd229d49"></a>
+<a id="orgac9ebb2"></a>
 
 # generate
 
@@ -40,20 +40,24 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
     -DinteractiveMode=false -DgroupId=com.land.center -DartifactId=land.crm \
     -Dversion=0.1.0-SNAPSHOT -Dpackage=com.land.crm \
 
+> The project which genterated by this archetype is a submodule of land-parent.  
+> You need add **<module>** at **modules** node into land-parent/pom.xml.  
+> `artifactId` effect the genterated project director name.  
 
-<a id="orgc38acc9"></a>
+
+<a id="orga4ccc46"></a>
 
 # git submodule
 
-    # 添加一个子模块项目
+    # add a submodule when under the parent project directory
     git submodule add git@github.com:vanniuner/land-archetype.git
-    # 克隆项目并自动刷拉取所有子模块
+    # clone project and pull all submodules
     git clone --recurse-submodules git@github.com:vanniuner/land-parent.git
-    # 更新 所有 子模块
+    # update all submodules
     git submodule update --remote
 
 
-<a id="org805dc73"></a>
+<a id="orgff7e405"></a>
 
 # referene
 
