@@ -97,13 +97,19 @@ mvn archetype:generate -DarchetypeGroupId=com.land.archetype \
 -Dversion=0.1.0-SNAPSHOT -Dpackage=com.land.crm \
 #+end_src
 
+#+begin_quote
+The project which genterated by this archetype is a submodule of land-parent.
+You need add *<module>* at *modules* node into land-parent/pom.xml.
+~artifactId~ effect the genterated project director name.
+
+#+end_quote
 * git submodule
 #+begin_src shell
-# 添加一个子模块项目
+# add a submodule when under the parent project directory
 git submodule add git@github.com:vanniuner/land-archetype.git
-# 克隆项目并自动刷拉取所有子模块
+# clone project and pull all submodules
 git clone --recurse-submodules git@github.com:vanniuner/land-parent.git
-# 更新 所有 子模块
+# update all submodules
 git submodule update --remote
 #+end_src
 * referene
