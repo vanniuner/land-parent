@@ -1,37 +1,43 @@
 
 # Table of Contents
 
-1.  [Introduction](#org8e31d01)
-2.  [context](#orgb976fa3)
-3.  [build](#orga4882ec)
-4.  [generate](#orgac9ebb2)
-5.  [git submodule](#orga4ccc46)
-6.  [referene](#orgff7e405)
+1.  [Introduction](#orgeb17743)
+2.  [context](#orgaf94686)
+3.  [build](#orgc2f2173)
+4.  [generate](#org5415e06)
+5.  [git submodule](#org9bd20b3)
+6.  [referene](#orge58f2bf)
 
 
 
-<a id="org8e31d01"></a>
+<a id="orgeb17743"></a>
 
 # Introduction
 
 Land Microservices Archetype , A standard Java framework for quick projects for teams and companies.  
 
 
-<a id="orgb976fa3"></a>
+<a id="orgaf94686"></a>
 
 # context
 
 ![img](project-depency.svg "模块依赖关系")  
 
 
-<a id="orga4882ec"></a>
+<a id="orgc2f2173"></a>
 
 # build
 
-    sh ./land.template/build-archetype.sh
+clone project and pull all submodules  
+
+    git clone --recurse-submodules git@github.com:vanniuner/land-parent.git
+
+    sh build-archetype.sh
+
+> This will create a archetype from **land-archetype** , and install it via maven.  
 
 
-<a id="orgac9ebb2"></a>
+<a id="org5415e06"></a>
 
 # generate
 
@@ -45,7 +51,7 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
 > `artifactId` effect the genterated project director name.  
 
 
-<a id="orga4ccc46"></a>
+<a id="org9bd20b3"></a>
 
 # git submodule
 
@@ -57,7 +63,7 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
     git submodule update --remote
 
 
-<a id="orgff7e405"></a>
+<a id="orge58f2bf"></a>
 
 # referene
 

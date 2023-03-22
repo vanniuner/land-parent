@@ -85,10 +85,18 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
   [[file:project-depency.svg]]
 
 * build
-#+begin_src
-sh ./land.template/build-archetype.sh
+clone project and pull all submodules
+#+begin_src shell
+git clone --recurse-submodules git@github.com:vanniuner/land-parent.git
 #+end_src
 
+#+begin_src shell
+sh build-archetype.sh
+#+end_src
+
+#+begin_quote
+This will create a archetype from *land-archetype* , and install it via maven.
+#+end_quote
 * generate
 #+begin_src shell
 mvn archetype:generate -DarchetypeGroupId=com.land.archetype \
@@ -101,7 +109,6 @@ mvn archetype:generate -DarchetypeGroupId=com.land.archetype \
 The project which genterated by this archetype is a submodule of land-parent.
 You need add *<module>* at *modules* node into land-parent/pom.xml.
 ~artifactId~ effect the genterated project director name.
-
 #+end_quote
 * git submodule
 #+begin_src shell
