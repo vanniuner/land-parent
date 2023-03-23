@@ -1,3 +1,6 @@
 [submodule "land-archetype"]
 	path = land-archetype
 	url = git@github.com:vanniuner/land-archetype.git
+[submodule "land-component"]
+	path = land-component
+	url = git@github.com:vanniuner/land-component.git

@@ -188,6 +188,7 @@
         </dependencies>
     </dependencyManagement>
     <modules>
+        <module>land-component</module>
         <module>land-archetype</module>
     </modules>
 </project>

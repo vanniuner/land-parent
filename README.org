@@ -11,8 +11,8 @@
 
 * Introduction
 Land Microservices Archetype , A standard Java framework for quick projects for teams and companies.
-* context
-  #+BEGIN_SRC dot :file project-depency.svg
+* Context
+  #+BEGIN_SRC dotsk :file project-depency.svg
     digraph G {
         bgcolor="transparent"
         rankdir = TD
@@ -82,9 +82,8 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
 
   #+CAPTION: 模块依赖关系
   #+RESULTS:
-  [[file:project-depency.svg]]
 
-* build
+* Build
 clone project and pull all submodules
 #+begin_src shell
 git clone --recurse-submodules git@github.com:vanniuner/land-parent.git
@@ -94,10 +93,10 @@ git clone --recurse-submodules git@github.com:vanniuner/land-parent.git
 sh build-archetype.sh
 #+end_src
 
-#+begin_quote
+#+begin_notice-info
 This will create a archetype from *land-archetype* , and install it via maven.
-#+end_quote
-* generate
+#+end_notice-info
+* Generate
 #+begin_src shell
 mvn archetype:generate -DarchetypeGroupId=com.land.archetype \
 -DarchetypeArtifactId=pom-archetype -DarchetypeVersion=0.0.1-SNAPSHOT \
@@ -110,7 +109,15 @@ The project which genterated by this archetype is a submodule of land-parent.
 You need add *<module>* at *modules* node into land-parent/pom.xml.
 ~artifactId~ effect the genterated project director name.
 #+end_quote
-* git submodule
+* Run
+#+begin_notice-example
+Archetype contains an *run.sh* for service startup.
+#+end_notice-example
+
+#+begin_src shell
+sh ./land-archetype/run.sh
+#+end_src
+* Git submodule
 #+begin_src shell
 # add a submodule when under the parent project directory
 git submodule add git@github.com:vanniuner/land-archetype.git
@@ -119,5 +126,8 @@ git clone --recurse-submodules git@github.com:vanniuner/land-parent.git
 # update all submodules
 git submodule update --remote
 #+end_src
-* referene
+* Referene
 https://www.baeldung.com/maven-relativepath
+https://juejin.cn/post/6844903976257716232
+* Todo
+Make a component project struct
