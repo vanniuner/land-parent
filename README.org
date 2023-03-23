@@ -53,7 +53,7 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
             rankdir = TD
             color = "#EFC050"
             fontcolor = "#EFC050"
-            label = "land-component";
+            label = "land-component-pom";
             landComponentPom [label="land-component-pom"]
             landParentPom -> landComponentPom [dir=back label="extend"]
         }
@@ -64,8 +64,8 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
             color = "#EFC050"
             fontcolor = "#EFC050"
             label = "land-base";
-            landComponent1 [label="land-component-1.jar"]
-            landComponentPom -> landComponent1 [dir=back label="extend" minlen=2]
+            landComponent1 [label="land-base.jar"]
+            landComponentPom -> landComponent1 [dir=back label="extend" minlen=1]
         }
 
         subgraph clusterC2 {
@@ -73,12 +73,15 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
             color = "#EFC050"
             fontcolor = "#EFC050"
             label = "land-redis";
-            landComponent2 [label="land-component-2.jar"]
+            landComponent2 [label="land-redis.jar"]
             landComponentPom -> landComponent2 [dir=back label="extend" ]
         }
 
     }
   #+END_SRC
+
+  #+RESULTS:
+  [[file:project-depency.svg]]
 
   #+CAPTION: 模块依赖关系
   #+RESULTS:
