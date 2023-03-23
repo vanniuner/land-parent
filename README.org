@@ -30,12 +30,13 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
             landArchetypePom [label="land-archetype-pom"]
 
             landArchetypePom -> service [dir=back minlen=1,label="depency"]
-            service -> biz [dir=back minlen=1,label="depency"]
+            biz -> service [ minlen=1,label="depency"]
             biz -> dao [dir=back minlen=1,label="depency"]
             dao -> api [dir=back minlen=2,label="depency"]
             {rank=same biz,service}
             {rank=same dao,api}
         }
+            service -> landBase [dir=back label="depency"]
 
         subgraph clusterP {
             rankdir = TD
@@ -58,14 +59,14 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
             landParentPom -> landComponentPom [dir=back label="extend"]
         }
 
+        landComponentPom -> landBase [dir=back label="extend" minlen=1]
 
         subgraph clusterC1 {
             rankdir = TD
             color = "#EFC050"
             fontcolor = "#EFC050"
             label = "land-base";
-            landComponent1 [label="land-base.jar"]
-            landComponentPom -> landComponent1 [dir=back label="extend" minlen=1]
+            landBase [label="land-base.jar"]
         }
 
         subgraph clusterC2 {
