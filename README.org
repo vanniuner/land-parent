@@ -63,7 +63,7 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
             rankdir = TD
             color = "#EFC050"
             fontcolor = "#EFC050"
-            label = "land-component-1";
+            label = "land-base";
             landComponent1 [label="land-component-1.jar"]
             landComponentPom -> landComponent1 [dir=back label="extend" minlen=2]
         }
@@ -72,7 +72,7 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
             rankdir = TD
             color = "#EFC050"
             fontcolor = "#EFC050"
-            label = "land-component-2";
+            label = "land-redis";
             landComponent2 [label="land-component-2.jar"]
             landComponentPom -> landComponent2 [dir=back label="extend" ]
         }
