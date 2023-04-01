@@ -33,10 +33,11 @@
         <!-- <univocity.parsers.version>2.5.9</univocity.parsers.version> -->
         <commons-logging.version>99.0-does-not-exist</commons-logging.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <mybatis-plus-boot-starter.version>3.4.0</mybatis-plus-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.5.2</mybatis-plus-boot-starter.version>
         <spring-cloud-alibaba-dependencies.version>2021.0.5.0</spring-cloud-alibaba-dependencies.version>
         <spring.cloud-version>2021.0.5</spring.cloud-version>
         <spring-boot-starter.version>2.7.9</spring-boot-starter.version>
+        <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
     </properties>
     <dependencyManagement>
         <dependencies>
