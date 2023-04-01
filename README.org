@@ -29,14 +29,15 @@ Land Microservices Archetype , A standard Java framework for quick projects for 
             service [label="service"]
             landArchetypePom [label="land-archetype-pom"]
 
-            landArchetypePom -> service [dir=back minlen=1,label="depency"]
+            landArchetypePom -> service [dir=back minlen=1,label="extend"]
             biz -> service [ minlen=1,label="depency"]
             biz -> dao [dir=back minlen=1,label="depency"]
-            dao -> api [dir=back minlen=2,label="depency"]
+            api -> dao [ minlen=2,label="depency"]
             {rank=same biz,service}
             {rank=same dao,api}
         }
-            service -> landBase [dir=back label="depency"]
+        dao -> landBase [dir=back label="depency"]
+
 
         subgraph clusterP {
             rankdir = TD
