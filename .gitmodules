@@ -4,3 +4,9 @@
 [submodule "land-component"]
 	path = land-component
 	url = git@github.com:vanniuner/land-component.git
+[submodule "longda-archetype"]
+	path = longda-archetype
+	url = git@10.10.0.154:architechture/longda-archetype/longda-archetype.git
+[submodule "longda-component"]
+	path = longda-component
+	url = git@10.10.0.154:architechture/longda-component/longda-component.git
